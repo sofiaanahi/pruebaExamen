@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon --exec 'npm run env:development' --signal SIGTERM",
+    "env:development": "cross-env NODE_ENV=development node app.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,12 +20,4 @@
   "devDependencies": {
     "nodemon": "^2.0.22"
   }
-  "scripts": {
-	"start": "nodemon --exec 'npm run env:development' --signal SIGTERM",
-	"env:development": "cross-env NODE_ENV=development node app.js"
-
-
-  
-}
-
 }
