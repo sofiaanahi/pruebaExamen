@@ -3,6 +3,7 @@ const cors = require('cors');
 const express = require('express');
 
 const path = require('path');
+const sequelize = require('./database');
 
 const app = express();
 
@@ -29,6 +30,16 @@ app.get('/api/consulta', (req, res) => {
   };
   res.render('consulta', data);
 });
+
+
+
+/*
+sequelize.sync().then(() => {
+  app.listen(process.env.PORT, () => console.log(`Server on port ${process.env.PORT}`));
+}).catch((error) => {
+  console.log("Error al sincronizar la base de datos", error);
+});
+*/
 
 // Starting the server
 app.listen(45635, () => console.log('Server on port 45635'));
